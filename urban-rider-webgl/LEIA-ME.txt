@@ -1,0 +1,43 @@
+URBAN RIDER: SCOOTER & CITY LAWS — WEBGL 3D (V3.2 DOWNTOWN)
+
+1. Extraia o ZIP inteiro (não abra dentro do ZIP).
+2. Abra index.html no Google Chrome ou Microsoft Edge.
+3. Clique em COMEÇAR A DIRIGIR.
+4. Se a placa de vídeo/navegador não oferecer WebGL, o jogo carrega
+   automaticamente uma versão alternativa em perspectiva.
+
+CONTROLES
+W / S ou setas para acelerar e dar ré.
+A / D ou setas para virar.
+Espaço para frear; Q / E para setas; H para buzinar.
+C alterna entre 3 câmeras; R reinicia a scooter.
+
+QUATRO DISTRITOS SEM TELA DE CARREGAMENTO
+Noroeste: Centro Urbano (edifícios altos e prefeitura).
+Nordeste: Bairros e Zona 30.
+Sudoeste: Orla, água e faixa costeira.
+Sudeste: Serras e Zona Rural.
+
+SISTEMAS
+- Cena 3D renderizada por Three.js/WebGL, incluído localmente em vendor/.
+- Scooter de ciclomotor com capacete, luzes, piscas e dois espelhos com
+  câmeras traseiras renderizadas em texturas (render-to-texture).
+- Três câmeras jogáveis, ciclo simplificado de dia/noite.
+- 54 carros circulando em vias de mão dupla com reação simplificada.
+- Semáforos em ciclo, fiscalização educativa, XP e missões de entrega.
+- Texturas procedurais em asfalto, gramado, cimento e fachadas.
+- Iluminação com tone mapping cinematográfico, névoa e ciclo dia/noite.
+- Nuvens volumétricas estilizadas, palmeiras na orla e postes iluminados.
+- Faixas de pedestres, marcações de retenção, luz de freio e farol.
+- Skyline urbano com torres altas, arranha-céu cilíndrico, listras de
+  fachadas, janelas densas, embasamentos comerciais, lojas e árvores.
+- Câmera em terceira pessoa mais baixa para sensação de escala na rua.
+
+LIMITAÇÕES DA VERSÃO
+- Gráficos 3D semirrealistas estilizados; não equivalem ao GTA V.
+- Física simplificada, sem motor físico de suspensão e pneus.
+- A IA do trânsito usa rotas predeterminadas e uma reação básica ao piloto.
+- Pontos e multas são FICTÍCIOS, não representam valores oficiais do CTB.
+- A versão de compatibilidade tem menos recursos 3D.
+
+O projeto usa Three.js r128 (biblioteca MIT, arquivo em vendor/).

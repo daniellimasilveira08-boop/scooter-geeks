@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Urban Rider: Scooter & City Laws — WebGL</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="scene"></div>
+  <div class="top"><div class="logo">⚡ URBAN <b>RIDER</b><small>SCOOTER & CITY LAWS • WEBGL 3D</small></div><div class="speed"><span>VELOCIDADE</span><strong id="speed">0</strong><em>km/h</em></div></div>
+  <div class="status"><span id="street">AVENIDA CENTRAL</span><span id="rules">MÃO ÚNICA →</span></div>
+  <div class="signals"><div id="leftIndicator">◀</div><div id="rightIndicator">▶</div></div>
+  <div class="mirror left"><canvas id="mirrorLeft" width="180" height="100"></canvas></div>
+  <div class="mirror right"><canvas id="mirrorRight" width="180" height="100"></canvas></div>
+  <div class="mission" id="mission"><div class="missionTag">📦 ENTREGA ATIVA</div><strong id="missionTitle">Aguardando partida</strong><div id="missionDistance">Destino: --</div><div class="missionFoot">XP <b id="xp">0</b> · CRÉDITOS <b id="credits">0</b> · MULTAS <b id="fines">0</b></div></div>
+  <div class="gear" id="gear"><span id="helmetIcon">🪖 Capacete ✓</span><span>🪞 Retrovisores ✓</span><span>💡 Farol ✓</span><span>📢 Buzina: H</span><span id="limit">LIMITE 30 km/h</span></div>
+  <div class="notice" id="notice" role="status" aria-live="polite"></div>
+  <div class="traffic-light" id="trafficLight"><span id="lightRed"></span><span id="lightAmber"></span><span id="lightGreen"></span></div>
+  <div class="district" id="district">CENTRO URBANO</div>
+  <div class="world-clock" id="worldClock">☀ 12:00</div>
+  <div class="help">W/S acelerar · A/D virar · Q/E setas · Espaço frear · H buzina · C câmera · R reiniciar</div>
+  <div class="mobile"><button data-key="a">◀</button><button data-key="d">▶</button><button data-key="q">SETA ◀</button><button data-key="e">SETA ▶</button><button data-key=" ">FREIO</button><button data-key="w">ACELERAR</button></div>
+  <div id="intro" class="overlay"><div class="panel"><div class="tag">MUNDO ABERTO • WEBGL 3D REAL</div><h1>URBAN <span>RIDER</span></h1><p>Explore quatro distritos sem telas de carregamento: Centro, Bairros, Orla e Serras. Faça entregas, respeite o trânsito e conquiste XP.</p><div class="badges"><span>🏙️ Centro Urbano</span><span>🏡 Bairros</span><span>🌊 Orla</span><span>⛰️ Serras e Rural</span></div><label class="helmetOption"><input type="checkbox" id="helmet" checked> Equipar capacete com viseira</label><button id="play">COMEÇAR A DIRIGIR</button><small>Three.js incluído no pacote. Sem conexão com internet. Requer navegador com WebGL.</small></div></div>
+  <div id="arrest" class="overlay hidden"><div class="panel arrestpanel"><div class="tag danger">OCORRÊNCIA DE TRÂNSITO</div><h1 id="arrestTitle">COLISÃO!</h1><div class="policeScene"><div class="lightbar">🚨</div><div class="policecar">🚓</div><div class="officers"><span>👮‍♂️</span><span>🛴</span><span>👮‍♀️</span></div></div><p id="arrestText">Uma viatura chegou ao local. Os policiais fizeram a abordagem e conduziram o piloto à delegacia.</p><button id="retry">TENTAR NOVAMENTE</button></div></div>
+  <script>
+    window.__startFallback = function(message) {
+      if (window.__urbanFallback || window.__urbanRiderWebGL) return;
+      window.__urbanFallback = true;
+      const detail = document.querySelector('#intro small');
+      if (detail) detail.textContent = 'Modo compatibilidade: ' + message;
+      const script = document.createElement('script');
+      script.src = 'game-fallback.js';
+      document.body.appendChild(script);
+    };
+    window.addEventListener('error', function(event) {
+      if (!window.__urbanRiderWebGL) window.__startFallback('Falha ao inicializar o motor WebGL');
+    });
+  </script>
+  <script src="vendor/three.min.js"></script>
+  <script src="game-webgl.js"></script>
+</body>
+</html>
